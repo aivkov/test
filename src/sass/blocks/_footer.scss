@@ -1,0 +1,196 @@
+.footer {
+  padding-top: 80px;
+  background: $grey;
+
+  @include md-screen {
+    padding-top: 40px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $grey2;
+    padding-bottom: 40px;
+
+    @include md-screen {
+      flex-wrap: wrap;
+      padding-bottom: 20px;
+    }
+  }
+
+  &__logo {
+    width: 300px;
+  }
+
+  &__left {
+    margin-right: 20px;
+
+    @include md-screen {
+      margin-right: 0;
+      width: 64%;
+    }
+
+    @include xs-screen {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__left-desc {
+    color: $grey3;
+
+    @include sm-screen {
+      font-size: 14px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: flex-start;
+
+    @include md-screen {
+      order: 2;
+      margin-top: 20px;
+    }
+
+    @include xs-screen {
+      order: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__menu-group {
+    column-count: 3;
+
+     li {
+       margin: 0 30px 20px;
+       page-break-inside: avoid;
+       break-inside: avoid;
+       break-inside: avoid-column;
+
+       a {
+         color: $text;
+
+         &:hover {
+           color: $text-hover;
+         }
+       }
+
+       @include lg-screen {
+         margin-right:  20px;
+         margin-left:  20px;
+       }
+
+       @include big-md-screen {
+         margin-right: 15px;
+         margin-left:  15px;
+         margin-bottom: 20px;
+       }
+
+       @include md-screen {
+         margin-left:  0;
+         margin-right: 40px;
+       }
+
+       @include sm-screen {
+         margin-right: 30px;
+       }
+
+     }
+
+    @include big-md-screen {
+      column-count: 2;
+    }
+
+    @include md-screen {
+      column-count: 4;
+    }
+
+    @include sm-screen {
+      column-count: 3;
+    }
+
+    @include xs-screen {
+      column-count: 2;
+    }
+  }
+  
+  &__contacts {
+    text-align: right;
+    flex-grow: 1;
+     a {
+       color: $text;
+
+        &:hover {
+           color: $text-hover;
+         }
+     }
+
+    @include md-screen {
+      width: 36%;
+      margin-top: 0;
+    }
+
+    @include xs-screen {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+  
+  &__phones {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 20px;
+
+    @include xs-screen {
+      align-items: start;
+      margin-right: 20px;
+    }
+
+    &-item {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+
+      .icon {
+        margin-right: 5px;
+      }
+    }
+
+    a {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 10px;
+
+       &:hover {
+           color: $text-hover;
+         }
+    }
+
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    &-policy {
+      a {
+        color: $grey3;
+        &:hover {
+          color: $text-hover;
+        }
+      }
+    }
+
+    &-copy {
+      color: $grey3;
+
+    }
+  }
+}

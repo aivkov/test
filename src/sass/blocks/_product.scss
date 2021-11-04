@@ -1,0 +1,75 @@
+.product {
+  display: flex;
+
+    &__img-box {
+      flex: 100px 0 0;
+   }
+
+  &__offers {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__offer {
+    display: flex;
+
+    &>div {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    display: flex;
+  }
+
+  &__name {
+    margin-left: 10px;
+    text-align: left;
+
+    &-link {
+      color: $text;
+      font-weight: 500;
+    }
+  }
+
+  &__size {
+
+  }
+
+  &__price {
+
+
+  }
+
+  &__quantity {
+
+  }
+
+  &__sum {
+    text-align: right;
+    font-weight: 500;
+  }
+
+  &__total {
+    display: flex;
+    justify-content: flex-end;
+    font-weight: bold;
+    padding-top: 20px;
+    margin-top: 10px;
+    border-top: 1px solid $grey2;
+    
+    &-total {
+      padding-left: 20px;
+      flex-grow: 2;
+    }
+
+    &-quantity {
+      text-align: center;
+    }
+
+    &-sum {
+      text-align: center;
+    }
+  }
+}

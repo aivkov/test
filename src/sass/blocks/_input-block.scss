@@ -1,0 +1,63 @@
+.input-block {
+  position: relative;
+  margin-bottom: 2px;
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    pointer-events: none;
+    position: absolute;
+    background: transparent;
+    left: 10px;
+    top: 9px;
+    color: $grey4;
+    transition: all 0.2s ease;
+    z-index: 5;
+
+    &:after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      left: 0;
+      top: 9px;
+      background: $light;
+      z-index: -1;
+    }
+  }
+
+  &__input {
+    height: 40px;
+    border: 1px solid $grey5;
+    padding: 0 10px;
+
+    &--textarea {
+      padding: 10px;
+      height: 150px;
+      resize: vertical;
+    }
+
+    &.error {
+      border-color: $error;
+    }
+  }
+
+  &--color {
+    margin-right: 10px;
+    margin-bottom: 20px;
+  }
+  input:focus + label,
+  input:not(:placeholder-shown) + label,
+  textarea:focus + label,
+  textarea:not(:placeholder-shown) + label {
+    top: -9px;
+    left: 10px;
+    font-size: 12px;
+    //background-color: $accent;
+    padding: 0 5px;
+    color: $labels;
+    transition: all 0.2s ease;
+  }
+
+}
+

@@ -1,0 +1,64 @@
+.reviews {
+  max-width: 1200px;
+
+  &__item {
+    width: 100%;
+    padding: 40px 60px;
+    margin-bottom: 30px;
+    box-shadow: $shadow;
+
+    @include md-screen {
+      padding: 30px 40px;
+    }
+
+    @include xs-screen {
+      padding: 20px 0 40px;
+      box-shadow: none;
+      border-bottom: 1px solid $grey2;
+    }
+  }
+
+  @include xxs-screen {
+    margin-top: 35px;
+  }
+
+  &__layout {
+    position: relative;
+  }
+
+  @include xs-screen {
+    margin-top: 20px;
+  }
+
+  &__add {
+    position: absolute;
+    right: 0;
+    top: -80px;
+
+    @include xs-screen {
+      top: -63px;
+    }
+
+    @include xxs-screen {
+      position: static;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__add-form {
+    display: none;
+    margin-bottom: 50px;
+
+    @include xs-screen {
+      margin-top: 25px;
+    }
+
+    @include xxs-screen {
+      margin-bottom: 25px;
+    }
+
+    &-btn-box {
+      margin-top: 10px;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+
+  &__list {
+    display: flex;
+  }
+
+  li {
+    border: 1px solid $grey3;
+    border-radius: 2px;
+    width: 32px;
+    height: 32px;
+    margin: 0 5px;
+    text-align: center;
+    line-height: 30px;
+
+    &.is-active {
+      border-color: $main;
+      background: $main;
+      color: $light;
+    }
+
+    .icon {
+      fill: none;
+      stroke: $text;
+      font-size: 10px;
+      height: 100%;
+    }
+  }
+
+  a {
+    display: block;
+    color: $grey7;
+    height: 100%;
+  }
+}

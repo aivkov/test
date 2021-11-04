@@ -1,0 +1,31 @@
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  z-index: 100;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  background: $main;
+  margin-top: -25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &__prev {
+    left: 0px;
+  }
+
+  &__next {
+    right: 0px;
+  }
+
+  .icon {
+    stroke: $light;
+  }
+}

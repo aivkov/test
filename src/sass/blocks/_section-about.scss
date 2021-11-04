@@ -1,0 +1,114 @@
+.section-about {
+  background: $grey;
+  font-size: 16px;
+  padding-top: 125px;
+  padding-bottom: 115px;
+  position: relative;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(../img/main-about-bg1.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: left top;
+    width: 20%;
+    height: 500px;
+    z-index: -1;
+
+    @include md-screen {
+      width: 30%;
+    }
+
+    @include sm-screen {
+      width: 40%;
+    }
+
+    @include xs-screen {
+      width: 50%;
+    }
+
+    @include xxs-screen {
+      width: 60%;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    background-image: url(../img/main-about-bg2.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    width: 20%;
+    height: 500px;
+    z-index: -1;
+
+    @include md-screen {
+      width: 30%;
+      bottom: -40px;
+    }
+
+    @include sm-screen {
+      width: 40%;
+      bottom: -30px;
+    }
+
+    @include xs-screen {
+      width: 50%;
+    }
+    @include xxs-screen {
+      width: 60%;
+    }
+  }
+
+  @include md-screen {
+    background-size: 30%, 30%;
+    padding-top: 70px;
+    padding-bottom: 80px;
+  }
+
+  @include sm-screen {
+    background-size: 50%, 50%;
+    padding-top: 60px;
+    padding-bottom: 70px;
+  }
+
+  @include xs-screen {
+    background-size: 50%, 50%;
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+
+  &__container {
+    max-width:730px;
+  }
+
+  h2 {
+    margin-bottom: 35px;
+  }
+
+  p {
+    line-height:2;
+    text-align: center;
+    margin-bottom: 30px;
+
+    @include md-screen {
+      text-align: left;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+  }
+
+  a {
+    margin-top: 30px;
+    display: block;
+    text-align: center;
+    font-weight: 600;
+  }
+}

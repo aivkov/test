@@ -1,0 +1,68 @@
+.ui-slider {
+  position: relative;
+  height: 4px;
+  width: calc(100% - 4px);
+  background: $grey2;
+  margin-bottom: 30px;;
+}
+
+.ui-widget-header {
+  background-color: $main;
+  position: absolute;
+  height: 4px;
+  top: 0;
+}
+
+.ui-slider-handle {
+  position: absolute;
+  z-index: 2;
+  top: -8px;
+  width: 20px;
+  height: 20px;
+  background-color: $light;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid $grey2;
+  transform: translateX(-10px);
+
+ /* &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -20px;
+    right: -20px;
+  }*/
+
+  &.ui-state-hover {
+    border-color: $main;
+  }
+}
+
+.slider-range {
+  position: relative;
+  padding-top: 50px;
+
+  &__values {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    input {
+      height: 40px;
+      border: 1px solid $grey2;
+      text-align: center;
+      width: 45%;
+    }
+  }
+}

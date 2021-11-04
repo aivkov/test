@@ -1,0 +1,57 @@
+.reviews-slider {
+  &__item {
+    position: relative;
+    width: 33.33%;
+    padding: 10px;
+
+    @include lg-screen {
+      width: 50%;
+    }
+
+    @include sm-screen {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  &__date {
+    color: $grey4;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    padding-right: 15%;
+    line-height: 1.5;
+    margin-bottom: 50px;
+
+    @include lg-screen {
+      padding-right: 10%;
+      margin-bottom: 35px;
+    }
+
+    @include sm-screen {
+       padding-right: 5%;
+    }
+  }
+
+  &__link {
+    color: $main;
+    font-weight: 500;
+    position: absolute;
+    bottom: 10px;
+    right: 15%;
+
+    @include lg-screen {
+      right: 10%;
+    }
+
+    @include sm-screen {
+      right: 5%;
+    }
+  }
+}

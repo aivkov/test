@@ -1,0 +1,19 @@
+.section-catalog {
+  margin-bottom: 100px;
+
+  @include lg-screen {
+    margin-bottom: 70px;
+  }
+
+  @include md-screen {
+    margin-bottom: 40px;
+  }
+
+  @include sm-screen {
+    margin-bottom: 20px;
+  }
+
+  @include xs-screen {
+    margin-bottom: 0px;
+  }
+}

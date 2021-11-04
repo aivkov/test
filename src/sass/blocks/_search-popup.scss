@@ -1,0 +1,51 @@
+.search-popup {
+  position: relative;
+
+  &__form {
+    display: none;
+
+    @include big_md-screen {
+      display: block;
+    }
+  }
+
+  &__wrap {
+    align-items: center;
+    padding: 0 35px 20px 35px;
+    display: none;
+  }
+
+  &__input-block {
+    //flex-grow: 1;
+    position: relative;
+    flex-grow: 1;
+    width: calc(100% - 83px);
+  }
+
+  &__input  {
+      height: 35px;
+      padding: 0 5px;
+      border: 1px solid #e1e1e1;
+      border-width: 0 0 1px;
+      width: 100%;
+  }
+
+  &__btn {
+      border: 0;
+      background-color: transparent;
+      right: 0;
+      position: absolute;
+      height: 35px;
+      width: 35px;
+  }
+
+  &__close-btn {
+    display: flex;
+    font-size: 20px;
+
+    .icon {
+      stroke: $text;
+      margin-left: 20px;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.catalog {
+
+  &-content {
+    flex-grow: 1;
+  }
+
+  .catalog-list__col {
+    width: 25%;
+
+    @include xl-screen {
+      width: 33.33%;
+    }
+
+    @include big-md-screen {
+      width: 50%;
+    }
+
+    @include xs-screen {
+      width: 100%;
+    }
+  }
+
+  &__show-filter-btn {
+    display: none;
+    margin-bottom: 20px;
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      top: -2px;
+    }
+
+    .icon {
+      margin-right: 10px;
+    }
+
+    @include md-screen {
+      font-size: 16px;
+      display: block;
+      font-weight: 600;
+    }
+  }
+
+  @include md-screen {
+    flex-direction: column;
+  }
+}

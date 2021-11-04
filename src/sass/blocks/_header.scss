@@ -1,0 +1,544 @@
+.header {
+  background: $fon;
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+
+  &__top {
+    height: 80px;
+
+    @include xs-screen {
+      height: 120px;
+    }
+
+    &-container {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: space-between;
+
+      @include xs-screen {
+        flex-direction: column;
+      }
+
+      @include xxs-screen {
+        align-items: flex-start;
+      }
+    }
+
+    &-right {
+      min-width: 350px;
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      justify-content: space-between;
+
+      @include big-md-screen {
+        min-width: auto;
+        margin-right: 30px;
+      }
+
+      @include md-screen {
+        flex-grow: 0;
+      }
+
+      @include xs-screen {
+        margin-bottom: 20px;
+      }
+
+      @include sm-screen {
+
+      }
+
+      @include xs-screen {
+        margin-bottom: 14px;
+        margin-right: 0;
+        align-self: center;
+      }
+    }
+  }
+
+  &__logo {
+    @include sm-screen {
+      margin: 10px 0 20px;
+    }
+  }
+
+  &__search {
+    flex-grow: 10;
+    margin-right: 7%;
+
+    @include lg-screen {
+      margin-right: 3%;
+    }
+
+    &-wrap {
+      position: relative;
+    }
+
+    &-form {
+      display: flex;
+
+    }
+
+    &-input {
+      width: 100%;
+      height: 35px;
+      padding: 0 5px;
+      border: 1px solid $grey2;
+      border-width: 0 0 1px;
+    }
+
+    &-btn {
+      border: 0;
+      background-color: transparent;
+      right: 0;
+      position: absolute;
+      height: 35px;
+      width: 35px;
+    }
+
+    @include md-screen {
+      display: none;
+    }
+
+    &-open {
+      display: none;
+      margin-right: 20px;
+      font-size: 20px;
+
+      .icon {
+        fill: $light;
+      }
+
+      &.is-active {
+        .icon {
+          fill: $active;
+        }
+      }
+
+      @include md-screen {
+        display: block;
+      }
+
+      @include md-screen {
+        order: 2;
+      }
+
+      @include xs-screen {
+        font-size: 20px;
+      }
+    }
+  }
+
+
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    margin-right: 3%;
+
+    &-link {
+      color: $text;
+      font-weight: 500;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+
+      .icon {
+        margin-right: 5px;
+        fill: $accent;
+      }
+    }
+
+    @include big-md-screen {
+      margin-right: 30px;
+    }
+
+    @include md-screen {
+      order: 1;
+    }
+
+    @include sm-screen {
+      display: none;
+    }
+  }
+
+  &__city {
+
+  }
+
+  &__lk {
+    position: relative;
+
+
+
+    &:hover {
+      .header__lk-link {
+        border-radius: $radius2 $radius2 0 0;
+        transition: all 0.3s ease;
+      }
+
+      .header__icon {
+        border-radius: $radius2 $radius2 0 $radius2;
+        transition: all 0.3s ease;
+
+        @include md-screen {
+          border-radius: $radius2;
+        }
+      }
+    }
+
+    &-link {
+      color: $text;
+      display: flex;
+      align-items: center;
+      background: $main;
+      border-radius: $radius2;
+      padding-left: 20px;
+      transition: all 0.3s ease;
+
+      @include md-screen {
+        padding-left: 0;
+        background: none;
+      }
+
+      .icon {
+        font-size: 16px;
+        fill: $light;
+      }
+    }
+
+    &-text {
+      color: $light;
+      margin-right: 15px;
+
+      @include md-screen {
+        display: none;
+      }
+
+    }
+
+    @include md-screen {
+      order: 3;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $radius2;
+    width: 35px;
+    height: 35px;
+    background: $accent;
+    box-shadow: $shadow;
+    transition: all 0.3s ease;
+
+    .icon {
+      font-size: 16px;
+    }
+  }
+
+  &__main-menu-open-btn {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    border: 0;
+    background-color: transparent;
+    margin-left: 30px;
+    display: none;
+
+    .hamb {
+      position: relative;
+      width: 25px;
+      height: 25px;
+
+      i {
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        background-color: $text;
+
+        &:nth-child(2) {
+          top: 8px;
+        }
+
+        &:nth-child(3) {
+          top: 16px;
+        }
+      }
+    }
+
+    @include big-md-screen {
+      display: block;
+    }
+  }
+
+  &__actions-mobile {
+    display: none;
+
+    @include xs-screen {
+      display: flex;
+      order: 4;
+      margin-left: 20px;
+    }
+  }
+
+  &__bottom {
+    height: 55px;
+    background: $grey;
+
+    &-container {
+      position: relative;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      @include xs-screen {
+        background: $main;
+      }
+    }
+
+    &-right {
+      display: flex;
+      justify-content: flex-end;
+
+      @include xs-screen {
+        position: absolute;
+        //top: -42px;
+        right: 30px;
+        transition: top 0.35s ease;
+      }
+
+    }
+  }
+
+  &__menu {
+    display: flex;
+    height: 100%;
+    flex-grow: 1;
+
+    @include xs-screen {
+      display: block;
+    }
+  }
+
+  &__catalog-open {
+    height: 100%;
+    width: 300px;
+    position: relative;
+    z-index: 0;
+
+    &:before {
+      content: '';
+      display: block;
+      background-color: $main;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100vw;
+      height: 100%;
+      z-index: -1;
+    }
+
+    @include xl-screen {
+      width: 220px;
+    }
+
+    @include big-md-screen {
+      width: 100%;
+      margin-right: 30px;
+    }
+  }
+
+  &__catalog-open-btn {
+    height: 100%;
+    border: 0;
+    background-color: $main;
+    width: 100%;
+    color: $light;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    
+    .hamb {
+      width: 20px;
+      height: 17px;
+      border: 0;
+      background-color: transparent;
+      position: absolute;
+      left: 135px;
+
+      @include lg-screen {
+        left: 120px
+      }
+
+      i {
+        height: 3px;
+        position: absolute;
+        left: 0;
+        background-color: $light;
+        transition: transform .3s ease,opacity .3s ease;
+        transition: transform .3s ease,opacity .3s ease,-webkit-transform .3s ease;
+
+        &:first-child {
+          top: 0;
+          width: 25px;
+        }
+
+        &:nth-child(2) {
+          top: 7px;
+          width: 18px;
+        }
+
+        &:last-child {
+          width: 33px;
+          top: 14px
+        }
+      }
+    }
+
+    &.is-active {
+      .hamb {
+        i {
+          &:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 7px);
+            width: 21px;
+            height: 2px;
+          }
+          &:nth-child(2) {
+            opacity: 0;
+            transform: translateX(5px);
+          }
+          &:nth-child(3) {
+            transform: rotate(-45deg) translate(3px, -6px);
+            width: 21px;
+            height: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    margin-left: 35px;
+
+
+
+    li {
+      margin: 0 20px;
+
+      @include lg-screen {
+        margin: 0 15px;
+      }
+
+      a {
+        color: $text;
+
+        &:hover {
+          color: $text-hover;
+        }
+      }
+    }
+
+    @include xl-screen {
+      margin-left: 25px;
+    }
+
+    @include big-md-screen {
+      display: none;
+    }
+  }
+
+  &__favourite {
+    position: relative;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    color: $text;
+    
+    &-link {
+      position: relative;
+    }
+
+    .icon {
+      fill: $light;
+    }
+
+    &-count {
+      top: 8px;
+      right: 0;
+
+      &--mobile {
+        top: -10px;
+        right: 0;
+      }
+    }
+  }
+
+  &__cart {
+    position: relative;
+    align-items: center;
+    display: flex;
+    margin-left: 20px;
+
+    &-link {
+      display: flex;
+      color: $text;
+      align-items: center;
+
+      &:hover {
+        color: $text
+      }
+    }
+
+    &-logo {
+      position: relative;
+      margin-right: 20px;
+
+      @include lg-screen {
+        //margin-left: 10px;
+      }
+
+      .icon {
+        fill: $light;
+      }
+    }
+
+    &-sum {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    &-text {
+      @include lg-screen {
+        display: none;
+      }
+    }
+  }
+
+  &__count {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: $active;
+    border-radius: 50%;
+    color: $light;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 3px;
+    top: -6px;
+    right: -8px;
+
+    &.is-hidden {
+      display: none;
+    }
+  }
+}

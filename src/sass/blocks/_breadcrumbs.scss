@@ -1,0 +1,44 @@
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px 0 10px;
+
+  @include md-screen {
+    margin: 20px 0;
+  }
+
+  @include sm-screen {
+    display: none;
+  }
+
+  li {
+    display: inline-block;
+    color: $text;
+    margin-bottom: 10px;
+
+    &:not(:last-child) {
+      color: $main;
+
+      &:after {
+        content: '/';
+        display: inline-block;
+        height: 10px;
+        width: 5px;
+        margin: 0 10px;
+
+        @include lg-screen {
+          width: 3px;
+        }
+      }
+    }
+  }
+
+  a {
+    color: inherit;
+    transition: color .3s ease;
+
+    &:hover {
+      color: $main;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.tabs-box-2 {
+  &__list {
+    display: flex;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $grey3;
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .tabs__active-line {
+    background-color: $text;
+
+    @include sm-screen {
+      display: block;
+    }
+  }
+
+}

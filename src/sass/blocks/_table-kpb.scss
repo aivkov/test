@@ -1,0 +1,20 @@
+.table-kpb {
+
+  &__item {
+    border-bottom: 1px solid $grey2;
+    padding: 2px 0;
+    // margin-bottom: 5px;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__second-column {
+    width: 300px;
+  }
+
+  &__third-column {
+    width: 300px;
+  }
+}

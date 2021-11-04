@@ -1,0 +1,25 @@
+.catalog-select {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 15px;
+  padding-right: 15px;
+
+   &__box {
+     margin-bottom: 20px;
+
+     @include xs-screen {
+       margin-right: 0;
+       width: 100%;
+     }
+
+     &--width-1 {
+       width: 180px;
+     }
+
+     &--width-2 {
+       width: 330px;
+       margin-right: 20px;
+     }
+   }
+}

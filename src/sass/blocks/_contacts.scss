@@ -1,0 +1,120 @@
+.contacts {
+  margin-bottom: 0;
+
+  @include lg-screen {
+    margin-bottom: 60px;
+  }
+
+  &__layout {
+    display: flex;
+
+    @include lg-screen {
+      flex-direction: column;
+    }
+  }
+
+  &__main {
+    flex: 60% 1 0;
+    padding-right: 30px;
+
+    @include lg-screen {
+      padding-right: 0;
+    }
+  }
+
+  &__tabs {
+    margin-bottom: 40px;
+
+    &-list {
+      display: flex;
+    }
+
+    &-item {
+      margin-right: 10px;
+      background: $light;
+      color: $text;
+      border: 1px solid $grey4;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      text-align: center;
+
+      &.is-active {
+        background: $main;
+        color: $light;
+      }
+    }
+  }
+
+  &__tab-box {
+    margin-bottom: 40px;
+
+    span {
+      font-weight: bold;
+    }
+
+    &-item {
+      margin-bottom: 15px;
+      position: relative;
+      padding-left: 30px ;
+
+      a {
+        color: $text;
+
+        &:hover {
+          color: $text-hover;
+        }
+      }
+    }
+
+    &-icon {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        height: 100%;
+        left: 0px;
+        bottom: 0;
+
+        .icon {
+          fill: $text;
+
+          &-mail {
+            font-size: 12px;
+          }
+        }
+      }
+  }
+
+  &__map {
+    height: 600px;
+    width: 100%;
+    background: $grey;
+
+    @include lg-screen {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__feedback {
+    flex: 40% 1 0;
+    padding-left: 0;
+
+    @include xl-screen {
+      padding-left: 0;
+    }
+
+    &-title {
+      font-size: 20px;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    &-form {
+      &-submit {
+        margin-top: 20px;
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,44 @@
+.table-sizes {
+
+  &__item {
+    position: relative;
+    margin-bottom: 30px;
+
+    &-title {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__table {
+    padding-bottom: 10px;
+    overflow-x: auto;
+
+    @include xs-screen {
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 3px 10px;
+      white-space: nowrap;
+
+      &.first-col {
+        position: absolute;
+        left: 0;
+        z-index: 10;
+        width: 130px;
+        border: none;
+        border-bottom: 1px solid $text;
+        border-left: 1px solid $text;
+        border-right: 1px solid $text;
+
+        background: $light;
+
+        +td {
+          padding-left: 118px;
+          border: none
+        }
+      }
+    }
+  }
+}
+

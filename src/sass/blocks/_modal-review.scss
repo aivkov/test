@@ -1,0 +1,14 @@
+.modal-review {
+  &__name {
+    margin-bottom: 5px;
+  }
+
+  &__date {
+    color: $grey5;
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    line-height: 1.5;
+  }
+}

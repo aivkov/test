@@ -1,0 +1,149 @@
+.dropdown-cart {
+
+  &__head {
+    margin: 0 20px 0 0;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $grey4;
+
+    &-title {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    &-desc {
+      color: $grey4
+    }
+
+    &-quantity, &-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    &-quantity {
+      margin-top: 20px;
+    }
+
+    &-total {
+      margin-top: 10px;
+    }
+
+    &-sum {
+      font-size: 24px;
+      font-weight: bold;
+      color: $active;
+    }
+  }
+
+  &__body {
+    padding: 40px 0 40px 20px;
+    width: 450px;
+  }
+
+  &__link {
+    &:hover {
+      color: $active;
+    }
+  }
+
+  &__wrap {
+    position: absolute;
+    background: $light;
+    width: 450px;
+    left: auto;
+    right: 0;
+    top: 55px;
+  }
+
+  &__scroll {
+    max-height: 600px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  &__content {
+    //padding-right: 20px;
+    box-shadow: $shadow;
+  }
+
+  &__item {
+    position: relative;
+    padding: 15px 0;
+    border-bottom: 1px solid $grey4;
+    display: flex;
+
+    &-img {
+      height: 135px;
+      flex: 90px 0 0;
+    }
+
+    &-content {
+      padding: 0 50px 0 20px;
+    }
+
+    &-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    &-text {
+      color: $grey4;
+      margin-top: 10px;
+
+      li {
+        margin-bottom: 5px;
+      }
+
+      li:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-price {
+      font-size: 16px;
+      font-weight: 600;
+      color: $text;
+
+      .small {
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__btn-close {
+    position: absolute;
+    top: 50%;
+    margin-top: -9px;
+    right: 20px;
+    cursor: pointer;
+
+    .icon {
+      stroke: $active;
+    }
+  }
+
+  &__footer {
+    padding: 30px 20px 0 0;
+
+    &-btn {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      height: 40px;
+
+      &:hover {
+        background: $text-hover;
+        color: $light;
+      }
+
+      .icon {
+        stroke: $light;
+        stroke-width: 4px;
+        margin-left: 20px;
+      }
+    }
+  }
+}

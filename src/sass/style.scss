@@ -1,0 +1,106 @@
+// LIBS
+// @import 'normalize.css/normalize';
+//@import 'swiper/src/swiper';
+
+// VARIABLES AND MIXINS
+@import './base/variables';
+@import './base/mixins';
+
+// DEFAULTS
+@import './base/fonts';
+@import './base/normalize';
+@import './generated/sprite-svg';
+@import './base/common';
+@import './base/typography';
+
+//libs
+@import './libs/fancybox';
+
+
+// HELPERS
+@import './base/helpers';
+
+// BLOCKS
+@import './blocks/header';
+@import './blocks/dropdown-link';
+@import './blocks/dropdown-lk';
+@import './blocks/dropdown-cart';
+@import './blocks/dropdown-body';
+@import './blocks/header-catalog';
+@import './blocks/swiper-main';
+@import './blocks/main-slider';
+@import './blocks/sections-slider';
+@import './blocks/tabs-box';
+@import './blocks/section-catalog';
+@import './blocks/catalog-list';
+@import './blocks/catalog-item';
+@import './blocks/raiting';
+@import './blocks/tab-block';
+@import './blocks/brazzers';
+@import './blocks/section-about';
+@import './blocks/section-reviews';
+@import './blocks/reviews-slider';
+@import './blocks/section-map';
+@import './blocks/logo-block';
+@import './blocks/footer';
+@import './blocks/search-popup';
+@import './blocks/modal';
+@import './blocks/mobile-menu';
+@import './blocks/input-search';
+@import './blocks/catalog-filter';
+@import './blocks/catalog';
+@import './blocks/breadcrumbs';
+@import './blocks/slider-range';
+@import './blocks/checkbox';
+@import './blocks/input-block';
+@import './blocks/checkbox-block';
+@import './blocks/select';
+@import './blocks/catalog-select';
+@import './blocks/pagination';
+@import './blocks/catalog-detail';
+@import './blocks/counter';
+@import './blocks/sizes-counters';
+@import './blocks/sizes-counter';
+@import './blocks/tabs-box-2';
+@import './blocks/tabs';
+@import './blocks/items-slider';
+@import './blocks/slider-nav';
+@import './blocks/modal-sign-in';
+@import './blocks/modal-forgot-pass';
+@import './blocks/modal-reg';
+@import './blocks/modal-review';
+@import './blocks/form';
+@import './blocks/contacts';
+@import './blocks/reviews';
+@import './blocks/review';
+@import './blocks/lk';
+@import './blocks/orders';
+@import './blocks/product';
+@import './blocks/cart';
+@import './blocks/share';
+@import './blocks/swap-btn';
+@import './blocks/transition-loader';
+@import './blocks/fast-view';
+@import './blocks/modal-fast-view';
+@import './blocks/ellipses-loader';
+@import './blocks/search-result';
+@import './blocks/search-top';
+@import './blocks/modal-table-sizes';
+@import './blocks/table-sizes';
+@import './blocks/table-kpb';
+@import './blocks/price';
+@import './blocks/about';
+@import './blocks/policy';
+@import './blocks/change-password';
+@import './blocks/reg';
+@import './blocks/favourite';
+@import './blocks/sections';
+@import './blocks/delivery';
+@import './blocks/fabric';
+
+
+
+
+
+
+

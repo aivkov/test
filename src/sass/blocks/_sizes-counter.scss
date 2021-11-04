@@ -1,0 +1,46 @@
+.sizes-counter {
+  display: flex;
+  align-items: center;
+  min-width:  33.33%;
+  margin-bottom: 15px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+
+  &__title {
+    font-size: 14px;
+    //width: 40px;
+    text-align: center;
+    margin-right: 10px;
+
+    &--all {
+      font-weight: 600;
+    }
+  }
+
+  &--all {
+    margin-bottom: 0;
+  }
+
+  &__price {
+    display: flex;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 500;
+
+    @include sm-screen {
+      font-size: 14px;
+    }
+
+    &-sum {
+      display: flex;
+      align-items: center;
+      margin-right: 5px;
+
+      .icon {
+        margin-right: 10px;
+        font-size: 12px;
+      }
+    }
+  }
+
+}

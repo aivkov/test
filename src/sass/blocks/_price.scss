@@ -1,0 +1,166 @@
+.price {
+
+  &__layout {
+    max-width: 1200px;
+  }
+
+  &__btn {
+    margin-bottom: 40px;
+    display: flex;
+    width: 300px;
+    align-items: center;
+    background: $active;
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 5px;
+    }
+  }
+
+  &__list {
+
+    &-children {
+      margin-left: 30px;
+
+      @include sm-screen {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  &__section {
+
+    &-header {
+      background: $main;
+      padding: 10px 20px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border-radius: 5px;
+
+      .icon {
+        margin-right: 10px;
+        stroke: $light;
+        cursor: pointer;
+      }
+    }
+
+    &-wrap {
+      display: flex;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+
+    &-title {
+      font-weight: 600;
+      color: $light;
+
+      @include sm-screen {
+        font-size: 14px;
+      }
+    }
+
+    &-link {
+      text-decoration: underline;
+      font-weight: 600;
+      color: $light;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: $grey
+      }
+
+      .icon {
+        font-size: 20px;
+
+        margin-left: 20px;
+      }
+
+      &-text {
+        @include sm-screen {
+          display: none;
+        }
+      }
+    }
+
+    &+.price__list, &+.price__items {
+      display: none;
+    }
+
+    .icon-right-arrow {
+      transform: rotate(0deg);
+      transition: all .3s ease;
+      width: 11px;
+      height: 17px;
+    }
+
+    &.is-active {
+
+      &+.price__list, &+.price__items {
+        display: block;
+      }
+
+      .icon-right-arrow {
+        transform: rotate(90deg);
+        transition: all .3s ease;
+      }
+    }
+  }
+
+  &__items {
+    margin-left: 30px;
+
+    @include sm-screen {
+      margin-left: 15px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $grey5;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &-img {
+      width: 70px;
+      margin-right: 20px;
+      flex-shrink: 0;
+
+      @include sm-screen {
+        width: 50px;
+        margin-right: 10px;
+      }
+    }
+
+    &-title {
+      flex-grow: 1;
+      font-weight: 500;
+
+      @include sm-screen {
+        font-size: 14px;
+      }
+    }
+
+    &-link {
+      line-height: 3;
+      margin-left: 20px;
+      flex-shrink: 0;
+
+      @include sm-screen {
+        margin-left: 10px;
+        height: 40px;
+        line-height: 2.4;
+      }
+    }
+  }
+
+
+}

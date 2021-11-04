@@ -1,0 +1,136 @@
+.select {
+  $block: &;
+  position: relative;
+  user-select: none;
+  transition-delay: 0s;
+
+  &.is-active {
+    #{$block}__head {
+      border-radius: $radius2 $radius2 0 0;
+      transition: all 0.3s ease;
+    }
+  }
+
+  &__head {
+    display: flex;
+    height: 40px;
+    line-height: 38px;
+    padding: 0 15px;
+    background-color: $fon;
+    border: 1px solid $grey2;
+    position: relative;
+    cursor: pointer;
+    border-radius: $radius2;
+    transition: all 0.3s ease;
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      color: $main;
+      font-size: 7px;
+      transition: transform .3s ease;
+      stroke: $text;
+      fill: none
+    }
+  }
+
+  &__title {
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: 600;
+    color: $active;
+    text-overflow: ellipsis;
+  }
+
+  &__body {
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    background-color: $light;
+    border-radius: 3px;
+    border: 1px solid $grey2;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(5px);
+    transition: opacity .3s ease, transform .3s ease;
+  }
+
+  &__item {
+
+    &-link {
+      display: block;
+      padding: 5px 10px;
+      color: $text;
+
+      &.active {
+        font-weight: 600;
+        color: $active;
+      }
+    }
+  }
+
+  &__list {
+    @extend .custom-scroll;
+    margin: 6px 0;
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    li {
+      cursor: pointer;
+      transition: background-color .3s ease;
+
+      &.active,
+      &:hover {
+        background-color: #f2f2f2;
+      }
+    }
+  }
+
+  &--h50 {
+    #{$block}__head {
+      height: 50px;
+    }
+
+    #{$block}__title {
+      line-height: 48px;
+    }
+  }
+
+  &.is-error {
+    #{$block}__head {
+      border-color: $error;
+    }
+  }
+
+  &.is-disabled {
+    pointer-events: none;
+    user-select: none;
+
+    #{$block}__head {
+      background-color: transparent;
+    }
+  }
+
+  &.is-active {
+    z-index: 10;
+    transition-delay: .3s;
+
+    #{$block}__head {
+      .icon-shevron-bottom {
+        transform: translateY(-50%) rotate(180deg);
+        stroke: $active;
+        stroke-width: 2px;
+      }
+    }
+
+    #{$block}__body {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+  }
+}

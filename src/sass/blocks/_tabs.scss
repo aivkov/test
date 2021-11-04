@@ -1,0 +1,16 @@
+.tabs {
+  position: relative;
+
+  &__head {
+    display: none;
+  }
+
+  &__active-line {
+    height: 2px;
+    position: absolute;
+    bottom: -1px;
+    background-color: $active;
+    transition: all .2s ease-out;
+
+  }
+}

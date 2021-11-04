@@ -1,0 +1,43 @@
+.delivery {
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+
+    @include sm-screen {
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    width: 200px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    box-shadow: none;
+    transform: scale(100%);
+    transition: all .3s ease;
+
+    &:hover {
+      box-shadow: $shadow;
+      transform: scale(107%);
+      transition: all .3s ease;
+    }
+
+    &-inner {
+      padding: 10px;
+      border: 1px solid $grey2;
+      border-radius: 10px;
+    }
+
+    &-img-box {
+      margin-bottom: 20px;
+    }
+
+    &-text {
+      text-align: center;
+      color: $text;
+    }
+  }
+
+}

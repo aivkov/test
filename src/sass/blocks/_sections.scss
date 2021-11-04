@@ -1,0 +1,90 @@
+.sections {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+
+  &__title {
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+  &__item {
+    position: relative;
+    align-items: stretch;
+    border-radius: 10px;
+    width: 20%;
+    margin-bottom: 40px;
+
+    @include xl-screen {
+      width: 25%;
+    }
+    @include lg-screen {
+      width: 33.333%;
+    }
+    @include md-screen {
+      width: 50%;
+    }
+
+    &-inner {
+      border-radius: $radius;
+      transform: scale(100%);
+      transition: all .3s ease;
+      box-shadow: none;
+      position: relative;
+
+      &:hover {
+        transform: scale(107%);
+        transition: all .3s ease;
+      }
+    }
+
+    &-text {
+      position: absolute;
+      text-align: center;
+      padding: 10px;
+      border-radius: 0 0 10px 10px;
+      bottom: 0;
+      width: 100%;
+      left: 0;
+      z-index: 1;
+      background: rgba(191,25,69,.7);
+    }
+
+    &-title {
+      text-align: center;
+      display: block;
+      color: $light;
+      padding: 0 10px;
+
+      @include xs-screen {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__image-wrapper {
+
+    margin-bottom: 10px;
+
+    @include xs-screen {
+    }
+  }
+
+  &__img-box {
+    position: relative;
+    display: block;
+
+
+    @include ratio(2, 3);
+
+    img {
+      @include coverdiv;
+      @include ofi(cover, center);
+      z-index: 1;
+      border-radius: $radius;
+    }
+  }
+
+
+}

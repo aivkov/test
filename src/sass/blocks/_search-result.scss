@@ -1,0 +1,83 @@
+.search-result {
+  position: absolute;
+  background: $light;
+  z-index: 100;
+  width: 100%;
+
+  &__list {
+    max-height: 500px;
+    box-shadow: $shadow;
+    overflow-y: auto;
+  }
+
+  &__item {
+    border-bottom: 1px solid $grey2;
+  }
+
+  &__empty {
+    padding: 20px;
+  }
+
+  &__link {
+    padding: 5px 10px;
+    display: flex;
+    font-size: 14px;
+    color: $text;
+    align-items: center;
+    background: $light;
+    
+    &:hover {
+      background: $main-light;
+    }
+  }
+
+  &__image {
+    width: 60px;
+    margin-right: 10px;
+  }
+
+  &__title {
+    color: $text;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+
+  &__price {
+    font-size: 16px;
+    font-weight: normal;
+    color: $grey5;
+
+    &-sum {
+      color: $text;
+      font-weight: 600;
+    }
+  }
+
+  &__footer {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+
+    &-btn {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &--desktop {
+    display: block;
+
+    @include big_md-screen {
+      display: none;
+    }
+  }
+
+  &--popup {
+    display: none;
+
+    @include big_md-screen {
+      display: block;
+    }
+  }
+
+}

@@ -1,0 +1,19 @@
+.modal-fast-view {
+
+  &__inner {
+    padding-left: 0;
+    max-width: 800px;
+
+    @include sm-screen {
+      padding: 50px 30px 50px 0;
+    }
+
+    @include xs-screen {
+      padding: 50px 0 40px 0;
+    }
+  }
+
+  .catalog-detail__slider-slide {
+    width: 100%;
+  }
+}

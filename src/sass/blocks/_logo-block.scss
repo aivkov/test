@@ -1,0 +1,24 @@
+.logo-block {
+  color: $textExtra;
+  margin-right: 5%;
+
+  &__main {
+    font-weight: bold;
+    font-size: 22.5px;
+
+    @include xxs-screen {
+      font-size: 20px;
+    }
+  }
+  &__desc {
+    font-size: 12px;
+
+    @include xxs-screen {
+      font-size: 10.7px;
+    }
+  }
+}
+
+a.logo-block:hover {
+  color: $textExtra;
+}

@@ -1,0 +1,67 @@
+// colors
+$fon: #fff;
+
+$text: #292116;
+
+$textExtra: #201B16;
+$textMenu: #000;
+$light: #fff;
+
+//$main: #A58966;
+$main: #6692A5;
+$main-light: lighten($main, 40%);
+$main-dark: darken($main, 10%);
+$error: #d9121f;
+$success: #038603;
+
+$accent: #de8f11;
+$accent: #d69c3e;
+//$accent: $main;
+
+$grey: #f8f8f8;
+$grey2: #e1e1e1;
+$grey3: #bdbdbd;
+$grey4: #a9a9a9;
+$grey5: #878787;
+$grey6: #575757;
+$grey7: #333333;
+
+$new: #7966A5;
+$sale: #df0202;
+$hit: #66A599;
+$labels: $accent;
+
+$active: #bf1945;
+$text-hover: $active;
+
+$radius-btn: 4px;
+$radius: 10px;
+$radius2: 25px;
+
+// fonts
+$lato: 'Lato', sans-serif;
+$font: $lato;
+
+// grid and responsive
+$container: 1770px;
+$columns: 12;
+$gap: 20px;
+$halfGap: ($gap / 2);
+$fields: 75px;
+
+$z-index: (
+        header: 100,
+        modal: 300
+);
+
+$break_xl: 1640px;
+$break_lg: 1320px;
+$break_big_md: 1200px;
+$break_md: 1023px;
+$break_sm: 767px;
+$break_xs: 575px;
+$break_xxs: 449px;
+
+$shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+
+$easeOutQuad: cubic-bezier(0.250, 0.460, 0.450, 0.940);

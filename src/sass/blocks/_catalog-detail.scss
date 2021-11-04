@@ -1,0 +1,452 @@
+.catalog-detail {
+  position: relative;
+  margin-top: 50px;
+  display: flex;
+
+  @include sm-screen {
+    margin-top: 40px;
+  }
+
+  @include xs-screen {
+    margin-top: 30px;
+  }
+
+  @include md-screen {
+    flex-direction: column;
+  }
+
+  &__left {
+    width: calc(100% - 500px);
+
+    @include md-screen {
+      width: 100%;
+    }
+  }
+
+  &__img {
+    width: 100%;
+
+    &-link {
+      display: block;
+    }
+  }
+
+  &__slider {
+    width: 100%;
+
+    &-wrapper {
+      margin: 0 -5px;
+      width: calc(100% + 10px);
+    }
+
+    &-slide {
+      width: 33.333%;
+      padding: 0 5px;
+      flex-shrink: 0;
+
+      @include lg-screen {
+        width: 50%;
+      }
+
+      @include md-screen {
+        width: 33.333%;
+      }
+
+      @include sm-screen {
+        width: 50%;
+      }
+
+      @include xs-screen {
+        width: 100%;
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__about {
+    table {
+      border-collapse: unset;
+      border-spacing: 2px;
+      margin-right: 0;
+    }
+
+    tr:nth-child(2n+1) {
+      background: $grey2;
+    }
+
+    tr:nth-child(2n) {
+      background: $grey;
+    }
+
+    tr:first-child {
+      background: $grey3;
+      font-weight: 600;
+    }
+
+    td {
+      padding: 3px  10px;
+      border: 1px solid $grey4;
+    }
+  }
+
+  &__right {
+    width: 500px;
+    margin-left: 80px;
+    margin-bottom: 30px;
+
+    @include xl-screen {
+      margin-left: 4%;
+    }
+
+    @include md-screen {
+      margin-left: 0;
+      margin-top: 40px;
+      width: auto;
+      max-width: 500px;
+    }
+  }
+
+  &__head {
+
+    &-links {
+      margin-bottom: 20px;
+
+      @include md-screen {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  &__back {
+    margin-bottom: 30px;
+
+    @include md-screen {
+      margin-bottom: 0;
+      margin-right: 20px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    &-link {
+      .icon {
+        position: relative;
+        top: 2px
+      }
+    }
+  }
+
+  &__siblings {
+    display: flex;
+    justify-content: space-between;
+
+    &-link {
+      padding: 10px 20px;
+      border: 1px solid $grey4;
+      background: $light;
+      color: $text;
+      border-radius: $radius2;
+
+      &:first-child {
+        @include md-screen {
+          margin-left: 0;
+        }
+      }
+
+      @include md-screen {
+        margin-left: 20px;
+      }
+
+      @include sm-screen {
+        padding: 7px 10px;
+        font-size: 14px;
+      }
+
+      @include xs-screen {
+        padding: 7px 10px;
+        font-size: 13px;
+      }
+
+      &:hover {
+        background: $main;
+        color: $light;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 26px;
+
+    @include sm-screen {
+      font-size: 20px;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  &__stars {
+    margin-right: 10px;
+  }
+
+  &__props {
+    margin-bottom: 10px;
+  }
+
+  &__prop{
+    margin-bottom: 10px;
+    line-height: 1.5;
+
+    &-title {
+      font-weight: bold;
+    }
+  }
+
+  &__download {
+
+    &-link {
+      text-decoration: underline;
+      color: $main;
+
+      &:hover {
+        color: $text;
+      }
+    }
+  }
+
+  &__price {
+    margin-top: 40px;
+    display: flex;
+    align-items: flex-end;
+
+    &-price {
+      margin-right: 20px;
+      color: $active;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    &-oldprice {
+      color: $grey4;
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: line-through;
+      line-height: 30px;
+    }
+  }
+
+  &__select {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 30px;
+
+    &-wrap {
+      width: 200px;
+    }
+
+    &-title {
+      font-weight: 600;
+      margin-right: 10px;
+      padding-top: 10px;
+    }
+
+    &-head {
+      padding-right: 30px;
+    }
+  }
+
+  &__sizes {
+    margin-top: 20px;
+    margin-bottom: 35px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    button {
+      height: 40px;
+      width: 180px;
+      display: flex;
+      align-items: center;
+
+      @include xs-screen {
+        width: 150px;
+      }
+
+    }
+  }
+
+
+
+  &__cart-btn {
+    margin-right: 20px;
+    margin-bottom: 15px;
+
+
+    .swap-btn__text {
+      left: 63px;
+      top: 13px;
+
+      @include xs-screen {
+        left: 53px;
+      }
+    }
+
+    &:hover {
+      background: $main-dark;
+    }
+  }
+
+  &__favourite-btn {
+    border: none;
+    top: 2px;
+    background: transparent;
+    font-size: 16px;
+    width: 150px;
+    cursor: pointer;
+    margin-bottom: 15px;
+
+    .icon {
+      margin-right: 5px;
+    }
+
+    &:hover {
+      color: $text-hover;
+    }
+
+    &.is-active {
+      color: $active;
+
+      .icon {
+        fill: $active;
+      }
+    }
+  }
+
+  &__tabs-head {
+    margin-top: 50px;
+  }
+
+  &__tabs-body {
+    font-size: 16px;
+    line-height: 2;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+  &__tab-desc {
+    max-width: 700px;
+  }
+
+  &__sizes-list {
+    column-count: 3;
+
+    @include xxs-screen {
+      column-count: 2;
+    }
+  }
+
+  &__reviews {
+    margin-right: 30px;
+    display: flex;
+    line-height: 1.4;
+
+    @include lg-screen {
+      flex-direction: column;
+    }
+
+    &-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    &-stars {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    &-raiting {
+      font-size: 18px;
+      font-weight: 600;
+      margin-left: 15px;
+    }
+
+    &-desc {
+      color: $grey5;
+      margin-bottom: 30px;
+    }
+
+    &-left {
+      min-width: 400px;
+      padding-right: 30px;
+
+      @include xl-screen {
+        min-width: 300px;
+        margin-bottom: 40px;
+      }
+
+      @include lg-screen {
+        width: 100%;
+      }
+
+
+      @include sm-screen {
+        min-width: 100%;
+      }
+    }
+
+    &-right {
+
+    }
+
+    .raiting__item.is-active .icon {
+      fill: $main;
+    }
+  }
+
+  &__review {
+    margin-bottom: 30px;
+
+    &-name {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    &-stars {
+      margin-bottom: 15px;
+    }
+
+    &-text {
+      margin-bottom: 10px;
+    }
+
+    &-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-date {
+      color: $grey5;
+      font-size: 14px;
+    }
+  }
+
+  .review__more {
+    margin-top: 0;
+  }
+}

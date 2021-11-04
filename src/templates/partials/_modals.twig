@@ -1,0 +1,591 @@
+<div class="mobile-menu" data-modal="mobile-menu" tabindex="-1" role="dialog" data-modal-inner>
+    <div class="mobile-menu__head">
+        <div class="mobile-menu__search">
+            <div class="input-search">
+                <input type="text" class="input-search__input" placeholder="Поиск по каталогу">
+                <button type="submit" class="input-search__btn">{{ mixins.icon('magnifier') }}</button>
+            </div>
+
+        </div>
+        <div class="mobile-menu__contacts">
+            <a href="tel:+79206759103" class="mobile-menu__contacts-link"><span>+7 (920) </span>675-91-03</a>
+            <a href="tel:+4932386647" class="mobile-menu__contacts-link"><span>+7 (4932) </span>38-66-47</a>
+        </div>
+        <button type="button" class="mobile-menu__close"
+                data-modal-close="mobile-menu">{{ mixins.icon('close') }}</button>
+    </div>
+    <div class="mobile-menu__body">
+        <ul class="mobile-menu__list">
+            <li><a href="#">О компании</a></li>
+            <li><a href="#">Условия доставки</a></li>
+            <li><a href="#">Прайс-лист</a></li>
+            <li><a href="#">Новости</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+        {#<div class="mobile-menu__social">
+            <ul class="social-list">
+                <li><a href="#">{{ mixins.icon('vk') }}</a></li>
+                <li><a href="#">{{ mixins.icon('fb') }}</a></li>
+                <li><a href="#">{{ mixins.icon('tw') }}</a></li>
+                <li><a href="#">{{ mixins.icon('ok') }}</a></li>
+                <li><a href="#">{{ mixins.icon('mailru') }}</a></li>
+            </ul>
+        </div>#}
+    </div>
+</div>
+
+<div class="modal modal-sign-in" data-modal="sign-in" tabindex="-1" role="dialog">
+    <div class="modal__inner modal-sign-in__inner" data-modal-inner>
+        <div class="modal__close" data-modal-close="sign-in">{{ mixins.icon('close') }}</div>
+        <div class="modal-sign-in__form">
+            <div class="modal__title">Авторизация</div>
+            <div class="modal__desc">Введите email и пароль к личному кабинету</div>
+            <form action="#" class="form modal-form">
+                <div class="form__field">
+                    <div class="input-block">
+                        <input type="text" id="sign-in-email" name="email" class="input-block__input input"
+                               placeholder=" ">
+                        <label for="sign-in-email" class="input-block__label">Email*</label>
+                    </div>
+                    <div class="form__field-error form__field-error--email"> </div>
+                </div>
+                <div class="form__field">
+                    <div class="input-block input-block--pass">
+                        <input type="password" id="sign-in-pass" name="pass" class="input-block__input input"
+                               placeholder=" ">
+                        <label for="sign-in-pass" class="input-block__label input-block__label--pass">Пароль*</label>
+                    </div>
+                    <div class="form__field-error form__field-error--pass"> </div>
+                </div>
+                <div class="form__btn-box">
+                    <button type="submit" class="btn">Войти</button>
+                </div>
+                <div class="modal-sign-in__links">
+                    <a href="#" rel="nofollow" class="modal-sign-in__link modal-sign-in__link--reg" data-modal-ajax-open="reg" data-modal-close="sign-in">Зарегистрироваться</a>
+                    <a href="#" rel="nofollow" class="modal-sign-in__link modal-sign-in__link--remember-pass" data-modal-ajax-open="forgot-pass" data-modal-close="sign-in">Забыли пароль?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-forgot-pass" data-modal="forgot-pass" tabindex="-1" role="dialog">
+    <div class="modal__inner modal-forgot-pass__inner" data-modal-inner>
+        <div class="modal__close" data-modal-close="forgot-pass">{{ mixins.icon('close') }}</div>
+        <div class="modal-forgot-pass__form">
+            <div class="modal__title">Восстановление пароля</div>
+            <div class="modal__desc">Введите email, который вы указывали при регистрации. И мы отправим вам ссылку для
+                восстановления пароля
+            </div>
+            <form action="#" class="form modal-form">
+                <div class="form__field">
+                    <div class="input-block">
+                        <input type="text" id="forgot-pass-email" name="pass" class="input-block__input input"
+                               placeholder=" " data-required>
+                        <label for="forgot-pass-email" class="input-block__label">Email*</label>
+                    </div>
+                </div>
+                <div class="form__btn-box">
+                    <button type="submit" class="btn">Далее</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-reg" data-modal="reg" tabindex="-1" role="dialog">
+    <div class="modal__inner modal-reg__inner" data-modal-inner>
+        <div class="modal__close" data-modal-close="reg">{{ mixins.icon('close') }}</div>
+        <div class="modal-reg__form">
+            <div class="modal__title">Регистрация</div>
+            <div class="lk__tabs">
+                <div class="lk__tabs-title">Статус клиента:</div>
+                <button class="lk__tabs-btn btn is-active" data-tab="lk-reg" data-tab-id="fiz">Физ. лицо</button>
+                <button class="lk__tabs-btn btn" data-tab="lk-reg" data-tab-id="ur">Юр. лицо&nbsp;/ ИП</button>
+            </div>
+            <div class="modal__desc">Заполните все обязательные поля</div>
+            <div class="lk__tabs-block tab-block is-active" data-tab-block="lk-reg" data-tab-block-id="fiz">
+                <form action="#" class="form modal-form row ajax-form">
+                    <input type="hidden" name="status" value="fiz">
+                    <div class="form__field col col-6 xs-col-12">
+                        <div class="input-block">
+                            <input type="text" id="reg-name-fiz" name="pass2" class="input-block__input input"
+                                   placeholder=" " autocomplete="off" data-required>
+                            <label for="reg-name-fiz" class="input-block__label">Ваше имя*</label>
+                        </div>
+                    </div>
+                    <div class="form__field col col-6 xs-col-12">
+                        <div class="input-block">
+                            <input type="text" id="reg-last-name-fiz" name="last-name" class="input-block__input input"
+                                   autocomplete="off" placeholder=" ">
+                            <label for="reg-last-name-fiz" class="input-block__label">Ваша фамилия</label>
+                        </div>
+                    </div>
+
+                    <div class="form__field col col-6 xs-col-12">
+                        <div class="input-block">
+                            <input type="text" id="reg-email-fiz" name="email" class="input-block__input input"
+                                   placeholder=" " autocomplete="off" data-required>
+                            <label for="reg-email-fiz" class="input-block__label">Email*</label>
+                        </div>
+                    </div>
+                    <div class="form__field col col-6 xs-col-12">
+                        <div class="input-block">
+                            <input type="text" id="reg-phone-fiz" name="phone" class="input-block__input input"
+                                   placeholder=" " autocomplete="off" data-input-phone data-required>
+                            <label for="reg-phone-fiz" class="input-block__label">Телефон*</label>
+                        </div>
+                    </div>
+                    <div class="form__field col col-6 xs-col-12">
+                        <div class="input-block">
+                            <input type="password" id="reg-pass-fiz" name="pass" class="input-block__input input"
+                                   placeholder=" " autocomplete="off" data-required>
+                            <label for="reg-pass-fiz" class="input-block__label">Пароль*</label>
+                        </div>
+                    </div>
+                    <div class="form__field col col-6 xs-col-12">
+                        <div class="input-block">
+                            <input type="password" id="reg-pass2-fiz" name="pass2" class="input-block__input input"
+                                   placeholder=" " autocomplete="off" data-required>
+                            <label for="reg-pass2-fiz" class="input-block__label">Подтверждение пароля*</label>
+                        </div>
+                    </div>
+                    <div class="form__field col col-12">
+                        <div class="input-block">
+                            <input type="text" id="reg-address-fiz" name="address" class="input-block__input input"
+                                   autocomplete="off" placeholder=" ">
+                            <label for="reg-address-fiz" class="input-block__label">Адрес доставки</label>
+                        </div>
+                    </div>
+                    <div class="form__field form__field-policy col col-12 checkbox-block">
+                        <input type="checkbox" id="reg-personal-policy-fiz" class="checkbox__input" checked
+                               data-form-policy>
+                        <label for="reg-personal-policy-fiz" class="checkbox__label">
+                            <span class="checkbox__icon">{{ mixins.icon('check') }}</span>
+                            <span class="checkbox__text"> Я согласен на обработку персональных данных</span>
+                        </label>
+                    </div>
+                    <div class="form__btn-box col-12">
+                        <button type="submit" class="btn">Зарегистрироваться</button>
+                    </div>
+                </form>
+            </div>
+            <div class="lk__tabs-block tab-block" data-tab-block="lk-reg" data-tab-block-id="ur">
+                <form action="#" class="form modal-form row ajax-form">
+                    <input type="hidden" name="status" value="ur">
+                    <div class="form__field col col-12">
+                        <div class="input-block">
+                            <input type="text" id="reg-organization-ur" name="organization"
+                                   class="input-block__input input" autocomplete="off" placeholder=" " data-required>
+                            <label for="reg-organization-ur" class="input-block__label">Название организации*</label>
+                        </div>
+                    </div>
+                    <div class="form__field col col-6 xs-col-12">
+                        <div class="input-block">
+                            <input type="text" id="reg-inn-ur" name="inn" class="input-block__input input"
+                                   placeholder=" " autocomplete="off" data-required>
+                            <label for="reg-inn-ur" class="input-block__label">ИНН*</label>
+                        </div>
+                    </div>
+                    <div class="form__field col col-6 xs-col-12">
+                        <div class="input-block">
+                            <input type="text" id="reg-name-ur" name="name" class="input-block__input input"
+                                   placeholder=" " autocomplete="off" data-required>
+                            <label for="reg-name-ur" class="input-block__label">Контактное лицо*</label>
+                        </div>
+                    </div>
+                    <div class="form__field col col-6 xs-col-12">
+                        <div class="input-block">
+                            <input type="text" id="reg-email-ur" name="email" class="input-block__input input"
+                                   placeholder=" " autocomplete="off" data-required>
+                            <label for="reg-email-ur" class="input-block__label">Email*</label>
+                        </div>
+                    </div>
+                    <div class="form__field col col-6 xs-col-12">
+                        <div class="input-block">
+                            <input type="text" id="reg-phone-ur" name="phone" class="input-block__input input"
+                                   placeholder=" " autocomplete="off" data-required>
+                            <label for="reg-phone-ur" class="input-block__label">Телефон</label>
+                        </div>
+                    </div>
+                    <div class="form__field col col-6 xs-col-12">
+                        <div class="input-block">
+                            <input type="password" id="reg-pass-ur" name="pass" class="input-block__input input"
+                                   placeholder=" " autocomplete="off" data-required>
+                            <label for="reg-pass-ur" class="input-block__label">Пароль*</label>
+                        </div>
+                    </div>
+                    <div class="form__field col col-6 xs-col-12">
+                        <div class="input-block">
+                            <input type="password" id="reg-pass2-ur" name="pass2" class="input-block__input input"
+                                   placeholder=" " autocomplete="off" data-required>
+                            <label for="reg-pass2-ur" class="input-block__label">Подтверждение пароля*</label>
+                        </div>
+                    </div>
+                    <div class="form__field col col-12">
+                        <div class="input-block">
+                            <input type="text" id="reg-address-ur" name="address" class="input-block__input input"
+                                   autocomplete="off" placeholder=" ">
+                            <label for="reg-address-ur" class="input-block__label">Адрес доставки</label>
+                        </div>
+                    </div>
+                    <div class="form__field form__field-policy col col-12 checkbox-block">
+                        <input type="checkbox" id="reg-personal-policy-fiz" class="checkbox__input" checked
+                               data-form-policy>
+                        <label for="reg-personal-policy-fiz" class="checkbox__label">
+                            <span class="checkbox__icon">{{ mixins.icon('check') }}</span>
+                            <span class="checkbox__text"> Я согласен на обработку персональных данных</span>
+                        </label>
+                    </div>
+                    <div class="form__btn-box col-12">
+                        <button type="submit" class="btn">Зарегистрироваться</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-review" data-modal="review" tabindex="-1" role="dialog">
+    <div class="modal__inner modal-review__inner" data-modal-inner>
+        <div class="modal__close" data-modal-close="review">{{ mixins.icon('close') }}</div>
+        <div class="modal-review__name bold">Андрей</div>
+        <div class="modal-review__date">15.08.2020</div>
+        <div class="modal-review__text">
+            В четверг сделал заказ, а субботу шесть поддонов с брусчаткой и бордюрами уже были на участке. Водитель
+            Денис,
+            несмотря на расстояние в 170 км, постарался привезти товар как можно раньше и выгрузить в наиболее удобное
+            место.
+            При этом не разу В четверг сделал заказ, а субботу шесть поддонов с брусчаткой и бордюрами уже были на
+            участке.
+            Водитель Денис, несмотря на расстояние в 170 км, постарался привезти товар как можно раньше и выгрузить в
+            наиболее
+            удобное место. При этом не разу В четверг сделал заказ, а субботу шесть поддонов с брусчаткой и бордюрами
+            уже были
+            на участке. Водитель Денис, несмотря на расстояние в 170 км, постарался привезти товар как можно раньше и
+            выгрузить в
+            наиболее удобное место. При этом не разу
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-review" data-modal="review" tabindex="-1" role="dialog">
+    <div class="modal__inner modal-review__inner" data-modal-inner>
+        <div class="modal__close" data-modal-close="review">{{ mixins.icon('close') }}</div>
+        <div class="modal-review__form">
+            <div class="modal__title">Написать отзыв</div>
+            <div class="modal__desc">Ваш отзыв поможет кому-то сделать выбор. Спасибо, что делитесь опытом!</div>
+            <form action="#" class="form modal-form">
+                <div class="form__field form__field-raiting">
+                    <ul class="raiting">
+                        <li class="raiting__item " data-raiting="1">
+                            {{ mixins.icon('star') }}
+                        </li>
+                        <li class="raiting__item " data-raiting="2">
+                            {{ mixins.icon('star') }}
+                        </li>
+                        <li class="raiting__item " data-raiting="3">
+                            {{ mixins.icon('star') }}
+                        </li>
+                        <li class="raiting__item " data-raiting="4">
+                            {{ mixins.icon('star') }}
+                        </li>
+                        <li class="raiting__item " data-raiting="5">
+                            {{ mixins.icon('star') }}
+                        </li>
+                        <li class="raiting__message">Спасибо за вашу оценку</li>
+                    </ul>
+
+                    <input type="hidden" name="raiting" value="0">
+                </div>
+                <div class="form__field">
+                    <div class="input-block">
+                        <input type="text" id="review-name" name="name" class="input-block__input input"
+                               placeholder=" ">
+                        <label for="sign-in-email" class="input-block__label">Ваше имя*</label>
+                    </div>
+                </div>
+                <div class="form__field">
+                    <div class="input-block">
+                        <textarea id="review-text" name="text" class="input-block__input--textarea"
+                                  placeholder=" "></textarea>
+                        <label for="review-text" class="input-block__label">Текст отзыва</label>
+                    </div>
+                </div>
+                <div class="form__btn-box">
+                    <button type="submit" class="btn">Оставить отзыв</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{#<div id="fast-view">
+    <div class="modal modal-fast-view is-active" data-modal="fast-view" tabindex="-1" role="dialog">
+        <div class="modal__inner modal-fast-view__inner" data-modal-inner>
+            <div class="modal__close" data-modal-close="fast-view">{{ mixins.icon('close') }}</div>
+            <div class="fast-view">
+                <div class="fast-view__left">
+                    <div class="fast-view__img">
+                        <div class="catalog-detail__slider swiper-container catalog-detail__slider--fast-view test">
+                            <div class="catalog-detail__slider-wrapper swiper-wrapper">
+                                {% for i in range(1,4) %}
+                                    <div class="catalog-detail__slider-slide swiper-slide">
+                                        <a href="img/cat1.jpg" class="catalog-detail__img-link" data-fancybox
+                                           data-zoom="img/cat1.jpg">
+                                            <img src="img/cat1.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="catalog-detail__slider-slide swiper-slide">
+                                        <a href="img/cat2.jpg" class="catalog-detail__img-link" data-fancybox
+                                           data-zoom="img/cat2.jpg">
+                                            <img src="img/cat2.jpg" alt="">
+                                        </a>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="slider-nav slider-nav__prev catalog-detail__nav--prev swiper-button-prev">{{ mixins.icon('left-arrow') }}</div>
+                            <div class="slider-nav slider-nav__next catalog-detail__nav--next swiper-button-next">{{ mixins.icon('right-arrow') }}</div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="fast-view__right">
+                    <div class="fast-view__head">
+                        <h2 class="fast-view__title">М 320 костюм "Дачник", 48-62, кулирка</h2>
+                    </div>
+
+                    <div class="fast-view__content">
+                        <div class="fast-view__rating">
+                            <div class="fast-view__stars">
+                                <ul class="raiting">
+                                    <li class="raiting__item is-active">
+                                        {{ mixins.icon('star') }}
+                                    </li>
+                                    <li class="raiting__item is-active">
+                                        {{ mixins.icon('star') }}
+                                    </li>
+                                    <li class="raiting__item is-active">
+                                        {{ mixins.icon('star') }}
+                                    </li>
+                                    <li class="raiting__item is-active">
+                                        {{ mixins.icon('star') }}
+                                    </li>
+                                    <li class="raiting__item">
+                                        {{ mixins.icon('star') }}
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="catalog-detail__counter">
+                                Просмотров: (2257)
+                            </div>
+                        </div>
+                        <ul class="catalog__detail__props">
+                            <li class="catalog-detail__prop">
+                                <span class="catalog-detail__prop-title">Размеры:&nbsp;</span>
+                                42, 44, 46, 48, 50, 52, 54
+                            </li>
+                            <li class="catalog-detail__prop">
+                                <span class="catalog-detail__prop-title">Ткань:&nbsp;</span>
+                                Кулирка
+                            </li>
+                        </ul>
+                        <div class="catalog-detail__price">
+                            <div class="catalog-detail__price-price"><span class="catalog-detail__price-sum">350</span>&nbsp;₽
+                            </div>
+                            <div class="catalog-detail__price-oldprice"><span
+                                        class="catalog-detail__oldprice-sum">460</span>&nbsp;₽
+                            </div>
+                        </div>
+                        <form class="catalog-detail__form ajax-form">
+                            <div class="catalog-detail__sizes">
+                                <div class="catalog-detail__sizes-counters sizes-counters">
+                                    <div class="sizes-counters__head">
+                                        <div class="sizes-counters__title">Выберите размеры:</div>
+                                        <div class="sizes-counter sizes-counter--all" data-counter>
+                                            <div class="sizes-counter__title sizes-counter__title--all">Все</div>
+                                            <div class="counter" data-counter>
+                                                <a class="counter__btn"
+                                                   data-counter-btn="-1">{{ mixins.icon('minus') }}</a>
+                                                <input type="number" class="counter__input counter__input--all"
+                                                       value="0" data-counter-input>
+                                                <a class="counter__btn"
+                                                   data-counter-btn="1">{{ mixins.icon('plus') }}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <ul class="sizes-counters__list fast-view__sizes-list">
+                                        {% for i in range(0, 11) %}
+                                            <li class="sizes-counter" data-counter>
+                                                <div class="sizes-counter__title">{{ i * 2 + 42 }}</div>
+                                                <div class="counter" data-counter>
+                                                    <a class="counter__btn"
+                                                       data-counter-btn="-1">{{ mixins.icon('minus') }}</a>
+                                                    <input type="number" class="counter__input counter__input--size"
+                                                           value="0" data-counter-input>
+                                                    <a class="counter__btn"
+                                                       data-counter-btn="1">{{ mixins.icon('plus') }}</a>
+                                                </div>
+                                                <div class="sizes-counter__price">
+                                                    <div class="sizes-counter__price-sum">
+                                                        {{ mixins.icon('close') }}
+                                                    </div>
+                                                    <span class="sizes-counter__price-sum-result">
+                                                        300 P
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="catalog-detail__actions">
+                                <button class="catalog-detail__cart-btn btn swap-btn transition" disabled>
+                                    {{ mixins.icon('cart-item') }}
+                                    <div class="swap-btn__text swap-btn__text--default">В корзину</div>
+                                    <div class="swap-btn__text swap-btn__text--active">Добавлено</div>
+                                </button>
+                                <a class="catalog-detail__favourite-btn swap-btn transition ajax-link">
+                                    {{ mixins.icon('heart') }}
+                                    <div class="swap-btn__text swap-btn__text--default">В избранное</div>
+                                    <div class="swap-btn__text swap-btn__text--active">В избранном</div>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>#}
+
+<div class="modal modal-table-sizes" data-modal="table-sizes" tabindex="-1" role="dialog">
+    <div class="modal__inner modal-table-sizes__inner" data-modal-inner>
+        <div class="modal__close" data-modal-close="table-sizes">{{ mixins.icon('close') }}</div>
+
+        <h2 class="modal__title">Таблица размеров</h2>
+        <div class="table-sizes__content">
+            <div class="table-sizes__item">
+                <h3 class="table-sizes__item-title">Женская размерная сетка</h3>
+                <div class="table-sizes__table custom-scroll">
+                    <table border="1">
+                        <tr>
+                            <td class="semibold first-col">Рост</td>
+                            <td></td>
+                            <td colspan="4">152, 158</td>
+                            <td colspan="6">164, 170</td>
+                            <td colspan="6">176, 182</td>
+                        </tr>
+                        <tr>
+                            <td class="semibold first-col">Обхват&nbsp;груди</td>
+                            <td></td>
+                            <td>84</td>
+                            <td>88</td>
+                            <td>92</td>
+                            <td>96</td>
+                            <td>100</td>
+                            <td>104</td>
+                            <td>108</td>
+                            <td>112</td>
+                            <td>116</td>
+                            <td>120</td>
+                            <td>124</td>
+                            <td>128</td>
+                            <td>132</td>
+                            <td>136</td>
+                            <td>140</td>
+                            <td>144</td>
+                        </tr>
+                        <tr>
+                            <td class="semibold first-col">Обхват&nbsp;бедер</td>
+                            <td></td>
+                            <td>90</td>
+                            <td>94</td>
+                            <td>98</td>
+                            <td>102</td>
+                            <td>106</td>
+                            <td>110</td>
+                            <td>114</td>
+                            <td>118</td>
+                            <td>122</td>
+                            <td>126</td>
+                            <td>130</td>
+                            <td>134</td>
+                            <td>138</td>
+                            <td>142</td>
+                            <td>146</td>
+                            <td>150</td>
+                        </tr>
+                        <tr>
+                            <td class="semibold first-col">Размер</td>
+                            <td></td>
+                            <td>42</td>
+                            <td>44</td>
+                            <td>46</td>
+                            <td>48</td>
+                            <td>50</td>
+                            <td>52</td>
+                            <td>54</td>
+                            <td>56</td>
+                            <td>58</td>
+                            <td>60</td>
+                            <td>62</td>
+                            <td>64</td>
+                            <td>66</td>
+                            <td>68</td>
+                            <td>70</td>
+                            <td>72</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="table-sizes__item">
+                <h3 class="table-sizes__item-title">Таблица размеров КПБ</h3>
+                <div class="table-sizes__table table-sizes__table table-kpb custom-scroll">
+                    <table border="1">
+                        <tr>
+                            <th class="table-kpb__first-column">№</th>
+                            <th class="table-kpb__second-column">Наименование</th>
+                            <th class="table-kpb__third-column">Размер изделия</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>КПБ 1,5 спальное</td>
+                            <td><div class="table-kpb__item">Пододеяльник 150х215 см.</div><div class="kpb-item">Простыня 150х215 см.</div><div class="kpb-item">Наволочка 70х70 см. (2шт.)</div></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>КПБ 2-х спальное</td>
+                            <td><div class="table-kpb__item">Пододеяльник 180х215 см.</div><div class="table-kpb__item">Простыня 180х215 см.</div><div class="table-kpb__item">Наволочка 70х70 см. (2шт.)</div></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>КПБ 2-х спальное с евро простыней</td>
+                            <td><div class="table-kpb__item">Пододеяльник 180х215 см.</div><div class="table-kpb__item">Простыня 220х240 см.</div><div class="table-kpb__item">Наволочка 70х70 см. (2шт.)</div></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>КПБ евро мини</td>
+                            <td><div class="table-kpb__item">Пододеяльник 200х215 см.</div><div class="table-kpb__item">Простыня 220х240 см.</div><div class="table-kpb__item">Наволочка 70х70 см. (2шт.)</div></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>КПБ евро</td>
+                            <td><div class="table-kpb__item">Пододеяльник 215х240 см.</div><div class="table-kpb__item">Простыня 220х240 см.</div><div class="table-kpb__item">Наволочка 70х70 см. (2шт.)</div></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>КПБ Семейный</td>
+                            <td><div class="table-kpb__item">Пододеяльник 150х215 см. (2шт)</div><div class="table-kpb__item">Простыня 220х240 см.</div><div class="table-kpb__item">Наволочка 70х70 см. (2шт.)</div></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

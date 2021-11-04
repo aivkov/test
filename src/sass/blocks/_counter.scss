@@ -1,0 +1,43 @@
+.counter {
+  height: 30px;
+  width: 80px;
+  display: inline-flex;
+  border: 1px solid $grey4;
+  flex-shrink: 0;
+  border-radius: $radius2;
+
+  @include xs-screen {
+    height: 25px;
+    width: 70px;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    .icon {
+      fill: $main;
+      font-size: 13px;
+      transition: fill .3s ease;
+
+      &:hover {
+        fill: $active;
+      transition: fill .3s ease;
+      }
+    }
+  }
+
+  &__input {
+    height: 100%;
+    width: calc(100% - 48px);
+    border: none;
+    text-align: center;
+  }
+
+
+}

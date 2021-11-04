@@ -1,0 +1,40 @@
+.catalog-list {
+  margin-left: -20px;
+  margin-right: -20px;
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include xs-screen {
+      justify-content: center;
+    }
+
+  }
+
+  &__col {
+    width: 20%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+
+    @include xl-screen {
+      width: 25%;
+    }
+
+    @include big-md-screen {
+      width: 33.33%;
+    }
+
+    @include md-screen {
+      width: 50%;
+      margin-bottom: 30px;
+    }
+
+    @include xs-screen {
+      width: 100%;
+      max-width: 360px;
+      margin-bottom: 20px;
+    }
+  }
+}

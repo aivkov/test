@@ -1,0 +1,171 @@
+{% set index = false %}
+{% set title = "Личные данные"%}
+
+{% extends "layouts/_layout.twig" %}
+
+{% block content %}
+    <div class="lk">
+        <div class="lk__layout container">
+            <div class="lk__menu">
+                <ul class="lk__menu-layout">
+                    <li class="lk__menu-item transition"><a href="#" class="lk__menu-link">{{ mixins.icon('user') }}<span class="lk__menu-text">Личные данные</span></a></li>
+                    <li class="lk__menu-item transition is-active"><a href="#" class="lk__menu-link">{{ mixins.icon('heart') }}<span class="lk__menu-text">Избранное</span></a></li>
+                    <li class="lk__menu-item transition"><a href="#" class="lk__menu-link">{{ mixins.icon('history') }}<span class="lk__menu-text">Мои заказы</span></a></li>
+                    <li class="lk__menu-item transition"><a href="#" class="lk__menu-link">{{ mixins.icon('logout') }}<span class="lk__menu-text">Выход</span></a></li>
+                </ul>
+            </div>
+            <div class="lk__main favourite catalog">
+                <div class="catalog-list">
+                    <div class="catalog-list__row">
+                        {% for i in range(0, 3) %}
+                            <div class="catalog-list__col">
+                                <div class="catalog-item">
+                                    <a href="#">
+                                        <div class="catalog-item__img">
+                                            <div class="swiper-container">
+                                                <ul class="catalog-item__labels">
+                                                    <li class="catalog-item__label catalog-item__label--{{ tab.name }}">
+                                                        {{ tab.label }}
+                                                    </li>
+                                                </ul>
+                                                <div class="catalog-item__image-wrap swiper-wrapper">
+                                                    <div class="catalog-item__image-container swiper-slide">
+                                                        <img data-src="img/cat1.jpg" class="lazy" alt="">
+                                                    </div>
+                                                    <div class="catalog-item__image-container swiper-slide">
+                                                        <img data-src="img/cat3.jpg" class="lazy" alt="">
+                                                    </div>
+                                                    <div class="catalog-item__image-container swiper-slide">
+                                                        <img data-src="img/cat2.jpg" class="lazy" alt="">
+                                                    </div>
+                                                    <div class="catalog-item__image-container swiper-slide">
+                                                        <img data-src="img/cat3.jpg" class="lazy" alt="">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <a class="slider-nav slider-nav__prev" href="#">{{ mixins.icon('left-arrow') }}</a>
+                                            <a class="slider-nav slider-nav__next" href="#">{{ mixins.icon('right-arrow') }}</a>
+                                        </div>
+                                    </a>
+                                    <div class="catalog-item__text">
+                                        <div class="catalog-item__content">
+                                            <div class="catalog-item__stars">
+                                                <ul class="raiting">
+                                                    <li class="raiting__item is-active">
+                                                        {{ mixins.icon('star') }}
+                                                    </li>
+                                                    <li class="raiting__item is-active">
+                                                        {{ mixins.icon('star') }}
+                                                    </li>
+                                                    <li class="raiting__item is-active">
+                                                        {{ mixins.icon('star') }}
+                                                    </li>
+                                                    <li class="raiting__item is-active">
+                                                        {{ mixins.icon('star') }}
+                                                    </li>
+                                                    <li class="raiting__item">
+                                                        {{ mixins.icon('star') }}
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="catalog-item__title">
+                                                М 320 костюм "Дачник" 48-62 кулирка
+                                            </a>
+
+
+                                            {% set colors = [
+                                                {name:'В ассортименте', code:'ass', label:'Распродажа', class: 'is-active active'},
+                                                {name:'Персик', code:'per', label:'Новинки', class: ''},
+                                                {name:'Мята', code:'myata', label:'Хиты продаж', class: ''}
+                                            ] %}
+                                            <div class="catalog-item__props">
+
+                                                <div class="catalog-item__prop catalog-item__prop--color">
+                                                    <div class="catalog-item__prop-title catalog-item__prop-title--color">
+                                                        Расцветки:
+                                                    </div>
+                                                    <div class="select catalog-item__select-wrap" data-select="filter">
+                                                        <div class="select__head catalog-item__select-head" data-select-head>
+                                                            <div class="select__title"
+                                                                 data-select-title>В ассортименте</div>
+                                                            {{ mixins.icon('shevron-bottom') }}
+                                                        </div>
+                                                        <div class="select__body" data-select-body>
+                                                            <ul class="select__list">
+                                                                {% for color in colors %}
+                                                                    <li class="select__item" data-select-item>
+                                                                        <a href="javascript:void(0)"
+                                                                           class="select__item-link catalog-item__select-link--color {{ color.class }}"
+                                                                           data-select-link
+                                                                           data-tab="item-"
+                                                                           data-tab-id="color-{{ color.code }}">{{ color.name }}</a>
+                                                                    </li>
+                                                                {% endfor %}
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="catalog-item__prop">
+                                                    <ul class="catalog-item__prop--sizes">
+                                                        <span class="catalog-item__prop-title">Размеры:</span>
+                                                        <li class="catalog-item__prop-desc--size is-active">42</li>
+                                                        <li class="catalog-item__prop-desc--size ">44</li>
+                                                        <li class="catalog-item__prop-desc--size ">46</li>
+                                                        <li class="catalog-item__prop-desc--size ">48</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="catalog-item__prop">
+                                                    <span class="catalog-item__prop-title">
+                                                        Ткань:
+                                                    </span>
+                                                    <span class="catalog-item__prop-desc">
+                                                           Кулирка
+                                                        </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="catalog-item__basket">
+                                            <div class="catalog-item__price">
+                                                <span class="catalog-item__price-sum">1 500</span>&nbsp;₽
+                                            </div>
+
+                                            <div class="catalog-item__actions">
+                                                <button class="catalog-item__heart favorite-btn ajax-link "
+                                                        data-action="Favourite/changeFavourite"
+                                                        data-ajax-callback="afterChangeFavourites"
+
+                                                        data-active="">
+                                                    {{ mixins.icon('heart') }}
+                                                </button>
+                                                <button class="catalog-item__cart catalog-item__cart--<?=$arResult['ID']?> ajax-link"
+                                                        data-offer-price="<?=$arResult['AVAILABLE_OFFERS'][0]['PRICE']?>"
+                                                        data-offer-id="<?=$arResult['AVAILABLE_OFFERS'][0]['ID']?>"
+                                                        data-action="Basket/addToBasket"
+                                                        data-add-loader="Y"
+                                                        data-ajax-callback="afterBasketAdd" data-container=".catalog-item__cart--<?=$arResult['ID']?>">
+                                                    <span class="catalog-item__icon--default"> {{ mixins.icon('cart-item') }}</span>
+                                                    <span class="catalog-item__icon--active">
+                                                        <svg width="21" height="15" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="svg-check-path" d="M1.56006 5.84984L4.62006 8.90984L12.4401 1.08984" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                    </span>
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

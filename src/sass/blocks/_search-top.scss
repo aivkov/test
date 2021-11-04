@@ -1,0 +1,22 @@
+.search-top {
+  margin: 20px 0;
+
+
+  &__item {
+    border-bottom: 1px solid $grey2;
+    padding-bottom: 10px;
+
+    &--empty {
+      color: $error;
+    }
+  }
+
+  &__request {
+    font-weight: bold;
+  }
+
+  &__count {
+    font-weight: bold;
+  }
+
+}

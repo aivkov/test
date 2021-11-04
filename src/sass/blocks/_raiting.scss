@@ -1,0 +1,28 @@
+.raiting {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    .icon {
+      fill: $grey2;
+    }
+
+    &.is-active {
+      .icon {
+       // fill: $accent;
+        fill: $active;
+      }
+    }
+  }
+
+  &__message {
+    font-style: italic;
+    font-size: 14px;
+    color: $grey5;
+    margin-left: 10px;
+    display: none;
+  }
+}

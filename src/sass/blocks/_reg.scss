@@ -1,0 +1,13 @@
+.reg {
+  max-width: 600px;
+
+  &__links {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link {
+    margin-bottom: 10px;
+  }
+}

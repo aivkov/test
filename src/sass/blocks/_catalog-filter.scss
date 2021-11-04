@@ -1,0 +1,141 @@
+.catalog-filter {
+  background: $light;
+  margin-right: 10px;
+  float: left;
+  z-index: 10;
+
+  @include md-screen {
+    display: none;
+    position: fixed;
+    margin: 0;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    opacity: 0;
+    transition: all .3s ease;
+  }
+
+  &.is-active {
+    @include md-screen {
+      display: block;
+      opacity: 1;
+      height: 100vh;
+      transition: all .3s ease;
+      z-index: 100;
+    }
+  }
+
+  &__head {
+    height: 50px;
+    width: 100%;
+    background: $main;
+    color: $light;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 600;
+
+    &-title {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        margin-right: 10px;
+      }
+    }
+
+    &-close-btn {
+
+      .icon {
+        stroke: $light;
+        stroke-width: 3;
+      }
+    }
+
+    @include md-screen {
+      display: flex;
+    }
+
+  }
+
+  &__scroll {
+    width: 250px;
+
+    @include md-screen {
+      display: flex;
+      width: 100%;
+      padding: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &:after {
+      content: "";
+      width: 30%;
+    }
+  }
+
+  &__group {
+    margin-bottom: 40px;
+    background: $grey;
+    padding: 25px;
+    box-shadow: $shadow;
+
+    &-scroll {
+      max-height: 200px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+
+    &-color {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    @include md-screen {
+      width: 31%;
+    }
+
+    @include sm-screen {
+      width: 48%;
+    }
+
+    @include xs-screen {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column;
+
+    .btn {
+      margin-bottom: 20px;
+      text-align: center;
+      line-height: 48px;
+      transition: background .3s ease;
+
+      @include md-screen {
+        width: 200px;
+      }
+      
+      &:hover {
+        background: $main-dark;
+        transition: background .3s ease;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,129 @@
+.block {
+	display: block;
+}
+
+.flex {
+	display: flex;
+}
+
+.none {
+	display: none;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -$halfGap;
+	margin-right: -$halfGap;
+}
+
+.col {
+	padding-left: $halfGap;
+	padding-right: $halfGap;
+}
+
+.col-6 {
+	width: 50%;
+}
+
+.col-12 {
+	width: 100%;
+}
+
+.md-col-12 {
+	@include md-screen {
+		width: 100%;
+	}
+}
+
+.xs-col-12 {
+	@include xs-screen {
+		width: 100%;
+	}
+}
+
+.sm-col-12 {
+	@include sm-screen {
+		width: 100%;
+	}
+}
+
+.text-center {
+	text-align: center;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+@include xl-screen {
+	.xl-block {
+		display: block;
+	}
+
+	.xl-flex {
+		display: flex;
+	}
+
+	.xl-none {
+		display: none;
+	}
+
+	.xl-text-center {
+		text-align: center;
+	}
+}
+
+@include lg-screen {
+	.lg-block {
+		display: block;
+	}
+
+	.lg-flex {
+		display: flex;
+	}
+
+	.lg-none {
+		display: none;
+	}
+}
+
+@include md-screen {
+	.md-block {
+		display: block;
+	}
+
+	.md-flex {
+		display: flex;
+	}
+}
+
+@include sm-screen {
+	.sm-block {
+		display: block;
+	}
+
+	.sm-flex {
+		display: flex;
+	}
+
+	.sm-none {
+		display: none;
+	}
+}
+
+.xs-show {
+	display: none;
+
+	@include xs-screen {
+		display: block;
+	}
+}
+
+.xs-hide {
+	display: block;
+
+	@include xs-screen {
+		display: none;
+	}
+}

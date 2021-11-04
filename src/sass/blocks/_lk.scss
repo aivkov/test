@@ -1,0 +1,162 @@
+.lk {
+  margin-top: 30px;
+  margin-bottom: 60px;
+
+  &__layout {
+    display: flex;
+    align-items: flex-start;
+
+    @include md-screen {
+      flex-direction: column;
+    }
+  }
+
+  &__message {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: $error;
+  }
+
+  &__main {
+    margin-left: 40px;
+
+    @include md-screen {
+      margin-left: 0;
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    &--empty {
+      &-link {
+        font-weight: 600;
+        color: $active;
+      }
+    }
+  }
+
+  &__menu {
+    flex: 280px 0 0;
+
+    @include md-screen {
+      flex-basis: auto;
+    }
+
+    &-layout {
+      border-radius: 10px;
+      padding: 20px;
+      background: $grey;
+      flex-direction: column;
+      box-shadow: $shadow;
+
+      @include md-screen {
+        display: flex;
+        flex-direction: row;
+        background: $light;
+        flex: auto 0 0;
+        padding-left: 0;
+        padding-right: 0px;
+        margin-bottom: 20px;
+        box-shadow: none;
+      }
+    }
+
+
+
+    &-item {
+      width: 100%;
+      border-bottom: 1px solid $grey3;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      @include md-screen {
+        border: none;
+        width: auto;
+        padding: 0 15px;
+      }
+
+      &.is-active, &:hover {
+        background: $main;
+
+        .lk__menu-link {
+          color: $light;
+        }
+      }
+
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      width: 100%;
+
+       .icon {
+         flex-shrink: 0;
+       }
+    }
+
+    &-text {
+      margin-left: 10px;
+      @include xs-screen {
+        display: none;
+      }
+    }
+  }
+
+  &__tabs {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+
+    &-title {
+      margin-right: 20px;
+    }
+
+    &-btn {
+      margin-right: 20px;
+      font-size: 14px;
+      color: $main;
+      background: $light;
+      border: 1px solid $main;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @include xs-screen {
+        margin-right: 15px;
+        padding: 0 10px;
+      }
+
+      &.is-active {
+        color: $light;
+        background: $main;
+      }
+    }
+  }
+
+  &__form {
+    background: $grey;
+    padding: 30px 20px;
+    max-width: 800px;
+    box-shadow: $shadow;
+
+    @include sm-screen {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0;
+      background: $light;
+      box-shadow: none;
+
+      .form__field, .form__btn-box {
+        padding: 0;
+      }
+    }
+  }
+}

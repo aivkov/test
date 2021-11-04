@@ -1,0 +1,59 @@
+.tabs-box {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid $grey2;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+
+  &.swiper-container-initialized {
+    .tabs-box__list {
+      justify-content: normal;
+    }
+  }
+
+  &__head {
+    display: none;
+  }
+
+  &__head-title {
+    display: inline-block;
+    border-bottom: 2px solid $active;
+    margin-bottom: -1px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    padding: 0px 35px;
+
+    @include md-screen {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    @include sm-screen {
+      padding-left: 0;
+    }
+  }
+
+  &__link {
+    font-size: 20px;
+    text-transform: uppercase;
+
+    @include sm-screen {
+      font-size: 18px;
+    }
+
+    &.is-active {
+      color: $active;
+      font-weight: bolder;
+    }
+  }
+
+  @include sm-screen {
+    //justify-content: flex-start;
+  }
+}
